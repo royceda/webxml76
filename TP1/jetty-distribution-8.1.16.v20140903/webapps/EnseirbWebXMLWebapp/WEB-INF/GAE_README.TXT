@@ -1,0 +1,2 @@
+Pour supprimer une transaction en cours :
+D:\Tools\Eclipse\Indigo_JEE\eclipse\plugins\com.google.appengine.eclipse.sdkbundle_1.5.2.r37v201107211953\appengine-java-sdk-1.5.2\bin>appcfg.cmd -e mat.loo@gmail.com rollback d:\malombard\Eclipse\Projects\EnseirbWebXML\EnseirbWebXMLWebapp\WebContent

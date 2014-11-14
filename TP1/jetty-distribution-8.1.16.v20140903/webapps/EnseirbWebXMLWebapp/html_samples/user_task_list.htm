@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="user-scalable=no,width=device-width" name="viewport">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css">
+<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+    <title>Liste des t&acirc;ches
+    </title>
+  </head>
+  <body>
+    <div data-role="header"><h1>								T&acirc;ches de 								matLo</h1>
+      <a title="Retour" href="#" data-icon="back" data-iconpos="notext" data-rel="back">Retour</a>
+    </div>
+    <div data-role="content">
+      <!--
+      						tri par deadline (plus récent en 1er) puis par priorité (de la
+      						plus petite �  la plus grande)
+      					-->
+      <table>
+        <tr>
+          <th>Finie
+          </th>
+          <th>Id
+          </th>
+          <th>Titre
+          </th>
+          <th>Description
+          </th>
+          <th>Deadline
+          </th>
+          <th>Priorit&eacute;
+          </th>
+          <th>Responsable
+          </th>
+          <th>Demandeur
+          </th>
+          <th>Date de cr&eacute;ation
+          </th>
+          <th>Voir
+          </th>
+          <th>Modifier
+          </th>
+        </tr>
+        <tr style=" 										text-decoration:line-through 									"><td>true</td><td>2</td><td>Etablir le plan des cours</td><td>Afin de s'assurer qu'on est bien d'accord entre Fred et 				Mat pour le contenu des cours et TDs 			</td><td>14/07/2011</td><td>2</td><td>matLo</td><td>fherbret</td><td>24/10/2011</td><td>
+            <a href="view?id=2" target="_self" data-role="button" data-iconpos="notext" data-icon="search">											Voir 										</a></td><td>
+            <a href="modify?id=2" target="_self" data-role="button" data-iconpos="notext" data-icon="gear">											Modifier 										</a></td>
+        </tr>
+        <tr style=""><td>false</td><td>3</td><td>Pr&eacute;parer les cours et TDs</td><td>Et s'assurer que tout fonctionne bien ! 			</td><td>15/10/2011</td><td>1</td><td>matLo</td><td>fherbret</td><td>24/10/2011</td><td>
+            <a href="view?id=3" target="_self" data-role="button" data-iconpos="notext" data-icon="search">											Voir 										</a></td><td>
+            <a href="modify?id=3" target="_self" data-role="button" data-iconpos="notext" data-icon="gear">											Modifier 										</a></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

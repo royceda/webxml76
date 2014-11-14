@@ -1,0 +1,19 @@
+Students;Group;IPAdress;null(fr.enseirb.webxml.junit.testcase.tds.AboutTestCase);null(fr.enseirb.webxml.junit.testcase.tds.AboutTestCase);null(fr.enseirb.webxml.junit.testcase.tds.AboutTestCase);null(fr.enseirb.webxml.junit.testcase.tds.URLTestCase);null(fr.enseirb.webxml.junit.testcase.tds.URLTestCase);null(fr.enseirb.webxml.junit.testcase.tds.XMLTestCase);null(fr.enseirb.webxml.junit.testcase.tds.XMLTestCase);null(fr.enseirb.webxml.junit.testcase.tds.XMLTestCase);null(fr.enseirb.webxml.junit.testcase.tds.XMLTestCase);null(fr.enseirb.webxml.junit.testcase.tds.XMLTestCase);null(fr.enseirb.webxml.junit.testcase.tds.XMLValidTestCase);null(fr.enseirb.webxml.junit.testcase.tds.XMLValidTestCase);null(fr.enseirb.webxml.junit.testcase.tds.XMLValidTestCase);Total;OK;Failed;Error;
+null;null;127.0.1.1;Error;Error;Error;Error;Error;Error;Error;Error;Error;Error;Error;Error;Error;0;-13;0;13;
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp_Tester/about
+Getting result: <null>
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp_Tester/about?action=group
+Getting result: <null>
+==>Error
+==>Error
+==>Error
+==>Error
+==>Error
+==>Error
+==>Error
+==>Error
+==>Error
+==>Error
+==>Error
+==>Error
+==>Error
