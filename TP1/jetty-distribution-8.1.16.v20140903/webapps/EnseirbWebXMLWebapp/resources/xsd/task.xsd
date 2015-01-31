@@ -1,17 +1,7 @@
-<?xml version ="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="task">
-    <xs:simpleType>
-      <xs:attribut name="id" type="xs:integer"/>
-      <xs:attribut name="deadline" type="xs:string"/>
-      <xs:attribut name="priority" type="xs:integer"/>
-      <xs:attribut name="done" type="xs:boolean"/>
-      <xs:attribut name="creationDate" type="xs:string"/>
-      <xs:attribut name="description" type="xs:string"/>
-      <xs:attribut name="asker" type="xs:string"/>
-      <xs:attribut name="owner" type="xs:string"/>
-    </xs:simpleType>
-  </xs:element>
-</xs:schema>
-
-</xs:element>
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:task="http://enseirb/task">
+	<xsd:import namespace="http://enseirb/task" schemaLocation="./task_type.xsd" />
+	
+	<xsd:element name="task" type="task:type_task" />
+</xsd:schema>

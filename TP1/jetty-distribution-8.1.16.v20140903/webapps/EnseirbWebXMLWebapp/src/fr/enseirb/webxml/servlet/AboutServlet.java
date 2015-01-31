@@ -31,57 +31,49 @@ public class AboutServlet extends HttpServlet {
 	String student1firstName = "Charlie";
 	String student1lastName = "Brown";
 	String student1fullName = student1firstName+" "+student1lastName;
-	String studentNumber = "5500";
-	//String teacherDefault = "Lombard";
+	String studentsNumber = "1";
+	String teacherDefault = "Lombard";
 	String action = params.getProperty("action");
 
 
 
-
 	//get Teacher
-	if(request.getRequestURI().contains("about/teacher/post")){
+	if(request.getRequestURI().contains("teacher/post")){
 	    teacher = ServletToolkit.getPostData(request);
-	     sResponse = ServletToolkit.readFile("/resources/html/common/about_teacher.html");
-	    //System.out.println("post teacher: done");
+	    sResponse = ServletToolkit.readFile("/resources/html/common/about_teacher.html");
+	   
 	}
 	//About Teacher
-	else if(request.getRequestURI().contains("about/teacher"))
+	else if(request.getRequestURI().contains("teacher"))
 	    sResponse = ServletToolkit.readFile("/resources/html/common/about_teacher.html");
 	
-
-
-	   
+	
 	//About student
-	else if(request.getRequestURI().contains("about")){
-	    if ("studentNumber".equals(action)) {
-		sResponse = studentNumber;
-		
-	    } else if (params.containsKey("studentId")) {
-		String studentId = params.getProperty("studentId");
-		if ("firstName".equals(action)) {
-		    sResponse = student1firstName;
-		} else {
-		sResponse = student1lastName;
-		}
-		
-	    } else if ("group".equals(action)) {
-		sResponse = "G4";
-		
-	    } else if ("class".equals(action)) {
-		sResponse = "I2";
-		
-	    } else if ("teacher".equals(action)) {
-		sResponse = teacher;
-
-	    } else {
-		sResponse = student1fullName;
-	    }
-	  
+	else if ("studentsNumber".equals(action)) {
+	    sResponse = studentsNumber;	    
+	}
+	else if ("firstName".equals(action)) {
+	sResponse = student1firstName;
+	}
+	else if ("lastName".equals(action)) {
+	    sResponse = student1lastName;
+	}
+	else if ("group".equals(action)) {
+	    sResponse = "G4";
+	}
+	else if ("class".equals(action)) {
+	    sResponse = "I2";
+	}
+	else if ("teacher".equals(action)) {
+	    sResponse = teacher;
+	}
+	else {
+	    sResponse = student1fullName;
 	}
 
 	ServletToolkit.writeResponse(response, sResponse);
 	
-    }
+	}
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

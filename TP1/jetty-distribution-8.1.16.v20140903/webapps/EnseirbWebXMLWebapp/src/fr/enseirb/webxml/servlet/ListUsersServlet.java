@@ -31,17 +31,15 @@ public class ListUsersServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	java.util.Properties params = ServletToolkit.parseURLParams(request);
 	String sResponse = null;
-	String action = params.getProperty("action");
+	String action = params.getProperty("id");
 
 	   
 	//About student
 	if(request.getRequestURI().contains("user/list/xml")){
 	    response.setHeader("Content-Type", "application/xml");
-		sResponse = XMLMediator.getUsers();
+	    sResponse = XMLMediator.getUsers();
 	}
-	
-	ServletToolkit.writeResponse(response, sResponse);
-	
+	ServletToolkit.writeResponse(response, sResponse);	
     }
     
     
