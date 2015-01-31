@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:user="http://enseirb/user">
+	<xsd:import namespace="http://enseirb/user" schemaLocation="./user_type.xsd" />
+	
+	<xsd:element name="users" type="user:type_userlist" />
+</xsd:schema>

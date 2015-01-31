@@ -1,0 +1,2 @@
+La présence de ce fichier assure la présence du répertoire parent.
+Cela sert pour placer le fichier de base de données.

@@ -1,0 +1,1173 @@
+Students;Group;IPAdress;testFull(fr.enseirb.webxml.junit.testcase.tds.AboutTestCase);testNotEmptyNames(fr.enseirb.webxml.junit.testcase.tds.AboutTestCase);testPostTeacher(fr.enseirb.webxml.junit.testcase.tds.AboutTestCase);testURLTask(fr.enseirb.webxml.junit.testcase.tds.URLTestCase);testURLUser(fr.enseirb.webxml.junit.testcase.tds.URLTestCase);testStats(fr.enseirb.webxml.junit.testcase.tds.XMLTestCase);testTaskId1(fr.enseirb.webxml.junit.testcase.tds.XMLTestCase);testTaskId2(fr.enseirb.webxml.junit.testcase.tds.XMLTestCase);testTaskList(fr.enseirb.webxml.junit.testcase.tds.XMLTestCase);testUserList(fr.enseirb.webxml.junit.testcase.tds.XMLTestCase);testTaskIdXMLValid(fr.enseirb.webxml.junit.testcase.tds.XMLValidTestCase);testTaskListXMLValid(fr.enseirb.webxml.junit.testcase.tds.XMLValidTestCase);testUserListXMLValid(fr.enseirb.webxml.junit.testcase.tds.XMLValidTestCase);testPostOwnership(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipPostTestCase);testPostOwnership2(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipPostTestCase);testPostOwnership3(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipPostTestCase);testPostOwnershipIsValid1_ok(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXSDTestCase);testPostOwnershipIsValid2_ok2(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXSDTestCase);testPostOwnershipIsValid3_id_noint(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXSDTestCase);testPostOwnershipIsValid4_no_username(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXSDTestCase);testPostOwnershipIsValid5_more_att(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXSDTestCase);testPostOwnershipIsValid6_children(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXSDTestCase);testPostOwnershipIsValid7_children2(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXSDTestCase);testXpathOwnership1(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase);testXpathOwnership2(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase);testXpathOwnership3(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase);testXpathOwnership4(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase);testXpathOwnership5(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase);testXpathOwnership6(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase);testXpathOwnership7(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase);testXpathOwnership8(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase);testCSVOwnership(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipCSVTestCase);testCSVOwnership2(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipCSVTestCase);Total;OK;Failed;Error;
+Charlie Brown;G4;127.0.1.1;OK;OK;OK;OK;OK;OK;OK;OK;OK;OK;OK;OK;OK;OK;OK;Failed;OK;Failed;OK;OK;Failed;Failed;Failed;Failed;Failed;Failed;Failed;Failed;Failed;Failed;Failed;Failed;Failed;33;18;15;0;
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/about
+Getting result: Charlie Brown
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/about?action=group
+Getting result: G4
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/reinitdata
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<!-- le caractÃ¨re guillement (") est interdit dans les textes -->
+<db_dump>
+	<tasks>
+		<task title="action 1" deadline="24/02/2014"
+			priority="3" done="false">
+			<description>christmas
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="init db"
+			deadline="20/11/2012" priority="1" done="false">
+			<description>initialisation de la db
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="plan cours" deadline="14/07/2012"
+			priority="2" done="true">
+			<description>cours et tds
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="supports cours et tds" deadline="15/10/2012"
+			priority="1" done="false">
+			<description>support PDF et PPT
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="relecture" deadline="30/10/2012"
+			priority="1" done="false">
+			<description>cours et tds pour voir
+			</description>
+			<asker>matLo</asker>
+			<owner>prof</owner>
+		</task>
+		<task title="tests" deadline="07/02/2014"
+			priority="2" done="false">
+			<description>notation
+			</description>
+			<asker>subProf</asker>
+			<owner>subProf</owner>
+		</task>
+		<task title="SVN" deadline="07/02/2014"
+			priority="1" done="false">
+			<description>eval 2
+			</description>
+			<asker>matLo</asker>
+			<owner>subProf</owner>
+		</task>
+	</tasks>
+	<!-- on ajoute des utilisateurs qui n'auront pas de tÃ¢ches (les autres seront 
+		crÃ©Ã©s automatiquement -->
+	<users>
+		<user name="paresseux" />
+	</users>
+</db_dump>
+Getting result: <?xml version="1.0" encoding="UTF-8"?><result><code>true</code><message>La base de données a été réinitialisée</message></result>
+>>>testFull(fr.enseirb.webxml.junit.testcase.tds.AboutTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/about?action=full
+Getting result: Charlie Brown
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/about
+Getting result: Charlie Brown
+==>OK
+>>>testNotEmptyNames(fr.enseirb.webxml.junit.testcase.tds.AboutTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/about?action=studentsNumber
+Getting result: 1
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/about?action=firstName&studentId=1
+Getting result: Charlie
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/about?action=lastName&studentId=1
+Getting result: Brown
+==>OK
+>>>testPostTeacher(fr.enseirb.webxml.junit.testcase.tds.AboutTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/about/teacher/post
+Posting data: nouveauprof
+Getting result: <!-- <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'> -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="user-scalable=no,width=device-width" />
+    <link
+       href="../jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.css"
+       rel="stylesheet" />
+    <script src="../jquery.mobile-1.2.0/jquery-1.8.2.min.js"></script>
+    <script
+       src="../jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <script type="text/javascript" src="../js/toolkit.js"></script>
+    <script type="text/javascript" src="../js/postTeacher.js"></script>
+    <title>Renseignement de l'enseignant</title>
+  </head>
+  <body>
+    <div data-role="header">
+      <h1>Renseignement de l'enseignant</h1>
+      <a title="Retour" href="#" data-icon="back" data-iconpos="notext"
+	 data-rel="back">Retour</a>
+    </div>
+    <div data-role="content">
+      <form action="#" method="post">
+	<div data-role="fieldcontain">
+	  <label for="fTeacher">Enseignant</label><input id="fTeacher"
+							 type="text" value="">
+	</div>
+      </form>
+    </div>
+    <a href="javascript:postTeacher(document.getElementById('fTeacher').value);" data-role="button">Stocker</a>
+  </body>
+</html>
+
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/about?action=teacher
+Getting result: nouveauprof
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/about/teacher/post
+Posting data: autreprof
+Getting result: <!-- <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'> -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="user-scalable=no,width=device-width" />
+    <link
+       href="../jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.css"
+       rel="stylesheet" />
+    <script src="../jquery.mobile-1.2.0/jquery-1.8.2.min.js"></script>
+    <script
+       src="../jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <script type="text/javascript" src="../js/toolkit.js"></script>
+    <script type="text/javascript" src="../js/postTeacher.js"></script>
+    <title>Renseignement de l'enseignant</title>
+  </head>
+  <body>
+    <div data-role="header">
+      <h1>Renseignement de l'enseignant</h1>
+      <a title="Retour" href="#" data-icon="back" data-iconpos="notext"
+	 data-rel="back">Retour</a>
+    </div>
+    <div data-role="content">
+      <form action="#" method="post">
+	<div data-role="fieldcontain">
+	  <label for="fTeacher">Enseignant</label><input id="fTeacher"
+							 type="text" value="">
+	</div>
+      </form>
+    </div>
+    <a href="javascript:postTeacher(document.getElementById('fTeacher').value);" data-role="button">Stocker</a>
+  </body>
+</html>
+
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/about?action=teacher
+Getting result: autreprof
+==>OK
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/reinitdata
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<!-- le caractÃ¨re guillement (") est interdit dans les textes -->
+<db_dump>
+	<tasks>
+		<task title="action 1" deadline="24/02/2014"
+			priority="3" done="false">
+			<description>christmas
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="init db"
+			deadline="20/11/2012" priority="1" done="false">
+			<description>initialisation de la db
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="plan cours" deadline="14/07/2012"
+			priority="2" done="true">
+			<description>cours et tds
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="supports cours et tds" deadline="15/10/2012"
+			priority="1" done="false">
+			<description>support PDF et PPT
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="relecture" deadline="30/10/2012"
+			priority="1" done="false">
+			<description>cours et tds pour voir
+			</description>
+			<asker>matLo</asker>
+			<owner>prof</owner>
+		</task>
+		<task title="tests" deadline="07/02/2014"
+			priority="2" done="false">
+			<description>notation
+			</description>
+			<asker>subProf</asker>
+			<owner>subProf</owner>
+		</task>
+		<task title="SVN" deadline="07/02/2014"
+			priority="1" done="false">
+			<description>eval 2
+			</description>
+			<asker>matLo</asker>
+			<owner>subProf</owner>
+		</task>
+	</tasks>
+	<!-- on ajoute des utilisateurs qui n'auront pas de tÃ¢ches (les autres seront 
+		crÃ©Ã©s automatiquement -->
+	<users>
+		<user name="paresseux" />
+	</users>
+</db_dump>
+Getting result: <?xml version="1.0" encoding="UTF-8"?><result><code>true</code><message>La base de données a été réinitialisée</message></result>
+>>>testURLTask(fr.enseirb.webxml.junit.testcase.tds.URLTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/list/xml
+Getting result: <tasks><task id="0" title="action 1" deadline="24/02/2014" priority="3" done="false" creationDate="08/01/2015" ><description>christmas
+			</description><asker>matLo</asker><owner>groupe</owner></task><task id="1" title="init db" deadline="20/11/2012" priority="1" done="false" creationDate="08/01/2015" ><description>initialisation de la db
+			</description><asker>matLo</asker><owner>groupe</owner></task><task id="2" title="plan cours" deadline="14/07/2012" priority="2" done="true" creationDate="08/01/2015" ><description>cours et tds
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="3" title="supports cours et tds" deadline="15/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>support PDF et PPT
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="4" title="relecture" deadline="30/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>cours et tds pour voir
+			</description><asker>matLo</asker><owner>prof</owner></task><task id="5" title="tests" deadline="07/02/2014" priority="2" done="false" creationDate="08/01/2015" ><description>notation
+			</description><asker>subProf</asker><owner>subProf</owner></task><task id="6" title="SVN" deadline="07/02/2014" priority="1" done="false" creationDate="08/01/2015" ><description>eval 2
+			</description><asker>matLo</asker><owner>subProf</owner></task></tasks>
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/create/url?title=Nouvelle+action+via+URL&description=Son+ajout+sera+a+confirmer&owner=matLo&asker=matLo&deadline=14/01/2013&priority=4&done=false
+Getting result: Youpiiiiii !!!!! *_*
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/list/xml
+Getting result: <tasks><task id="0" title="action 1" deadline="24/02/2014" priority="3" done="false" creationDate="08/01/2015" ><description>christmas
+			</description><asker>matLo</asker><owner>groupe</owner></task><task id="1" title="init db" deadline="20/11/2012" priority="1" done="false" creationDate="08/01/2015" ><description>initialisation de la db
+			</description><asker>matLo</asker><owner>groupe</owner></task><task id="2" title="plan cours" deadline="14/07/2012" priority="2" done="true" creationDate="08/01/2015" ><description>cours et tds
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="3" title="supports cours et tds" deadline="15/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>support PDF et PPT
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="4" title="relecture" deadline="30/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>cours et tds pour voir
+			</description><asker>matLo</asker><owner>prof</owner></task><task id="5" title="tests" deadline="07/02/2014" priority="2" done="false" creationDate="08/01/2015" ><description>notation
+			</description><asker>subProf</asker><owner>subProf</owner></task><task id="6" title="SVN" deadline="07/02/2014" priority="1" done="false" creationDate="08/01/2015" ><description>eval 2
+			</description><asker>matLo</asker><owner>subProf</owner></task><task id="7" title="Nouvelle action via URL" deadline="14/01/2013" priority="4" done="false" creationDate="08/01/2015" ><description>Son ajout sera a confirmer</description><asker>matLo</asker><owner>matLo</owner></task></tasks>
+==>OK
+>>>testURLUser(fr.enseirb.webxml.junit.testcase.tds.URLTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/user/list/xml
+Getting result: <users><user name="groupe"/> <user name="matLo"/> <user name="paresseux"/> <user name="prof"/> <user name="subProf"/> </users>
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/user/create/url?name=urlUser
+Getting result: Youpiiiiii !!!!! *_*
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/user/list/xml
+Getting result: <users><user name="groupe"/> <user name="matLo"/> <user name="paresseux"/> <user name="prof"/> <user name="subProf"/> <user name="urlUser"/> </users>
+==>OK
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/reinitdata
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<!-- le caractÃ¨re guillement (") est interdit dans les textes -->
+<db_dump>
+	<tasks>
+		<task title="action 1" deadline="24/02/2014"
+			priority="3" done="false">
+			<description>christmas
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="init db"
+			deadline="20/11/2012" priority="1" done="false">
+			<description>initialisation de la db
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="plan cours" deadline="14/07/2012"
+			priority="2" done="true">
+			<description>cours et tds
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="supports cours et tds" deadline="15/10/2012"
+			priority="1" done="false">
+			<description>support PDF et PPT
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="relecture" deadline="30/10/2012"
+			priority="1" done="false">
+			<description>cours et tds pour voir
+			</description>
+			<asker>matLo</asker>
+			<owner>prof</owner>
+		</task>
+		<task title="tests" deadline="07/02/2014"
+			priority="2" done="false">
+			<description>notation
+			</description>
+			<asker>subProf</asker>
+			<owner>subProf</owner>
+		</task>
+		<task title="SVN" deadline="07/02/2014"
+			priority="1" done="false">
+			<description>eval 2
+			</description>
+			<asker>matLo</asker>
+			<owner>subProf</owner>
+		</task>
+	</tasks>
+	<!-- on ajoute des utilisateurs qui n'auront pas de tÃ¢ches (les autres seront 
+		crÃ©Ã©s automatiquement -->
+	<users>
+		<user name="paresseux" />
+	</users>
+</db_dump>
+Getting result: <?xml version="1.0" encoding="UTF-8"?><result><code>true</code><message>La base de données a été réinitialisée</message></result>
+>>>testStats(fr.enseirb.webxml.junit.testcase.tds.XMLTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/stats/xml
+Getting result: <stats><user name="groupe"><tasks number="2"><done number="0"></done><todo number="2"><late number="2"><task title="action 1"></task><task title="init db"></task></late><intime number="0"></intime></todo></tasks></user><user name="matLo"><tasks number="2"><done number="1"><task title="plan cours"></task></done><todo number="1"><late number="1"><task title="supports cours et tds"></task></late><intime number="0"></intime></todo></tasks></user><user name="paresseux"><tasks number="0"><done number="0"></done><todo number="0"><late number="0"></late><intime number="0"></intime></todo></tasks></user><user name="prof"><tasks number="1"><done number="0"></done><todo number="1"><late number="1"><task title="relecture"></task></late><intime number="0"></intime></todo></tasks></user><user name="subProf"><tasks number="2"><done number="0"></done><todo number="2"><late number="2"><task title="tests"></task><task title="SVN"></task></late><intime number="0"></intime></todo></tasks></user></stats>
+==>OK
+>>>testTaskId1(fr.enseirb.webxml.junit.testcase.tds.XMLTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/list/xml?id=1
+Getting result: <task id="1" title="init db" deadline="20/11/2012" priority="1" done="false" creationDate="08/01/2015" ><description>initialisation de la db
+			</description><asker>matLo</asker><owner>groupe</owner></task>
+==>OK
+>>>testTaskId2(fr.enseirb.webxml.junit.testcase.tds.XMLTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/list/xml?id=2
+Getting result: <task id="2" title="plan cours" deadline="14/07/2012" priority="2" done="true" creationDate="08/01/2015" ><description>cours et tds
+			</description><asker>prof</asker><owner>matLo</owner></task>
+==>OK
+>>>testTaskList(fr.enseirb.webxml.junit.testcase.tds.XMLTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/list/xml
+Getting result: <tasks><task id="0" title="action 1" deadline="24/02/2014" priority="3" done="false" creationDate="08/01/2015" ><description>christmas
+			</description><asker>matLo</asker><owner>groupe</owner></task><task id="1" title="init db" deadline="20/11/2012" priority="1" done="false" creationDate="08/01/2015" ><description>initialisation de la db
+			</description><asker>matLo</asker><owner>groupe</owner></task><task id="2" title="plan cours" deadline="14/07/2012" priority="2" done="true" creationDate="08/01/2015" ><description>cours et tds
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="3" title="supports cours et tds" deadline="15/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>support PDF et PPT
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="4" title="relecture" deadline="30/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>cours et tds pour voir
+			</description><asker>matLo</asker><owner>prof</owner></task><task id="5" title="tests" deadline="07/02/2014" priority="2" done="false" creationDate="08/01/2015" ><description>notation
+			</description><asker>subProf</asker><owner>subProf</owner></task><task id="6" title="SVN" deadline="07/02/2014" priority="1" done="false" creationDate="08/01/2015" ><description>eval 2
+			</description><asker>matLo</asker><owner>subProf</owner></task></tasks>
+==>OK
+>>>testUserList(fr.enseirb.webxml.junit.testcase.tds.XMLTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/user/list/xml
+Getting result: <users><user name="groupe"/> <user name="matLo"/> <user name="paresseux"/> <user name="prof"/> <user name="subProf"/> </users>
+==>OK
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/reinitdata
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<!-- le caractÃ¨re guillement (") est interdit dans les textes -->
+<db_dump>
+	<tasks>
+		<task title="action 1" deadline="24/02/2014"
+			priority="3" done="false">
+			<description>christmas
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="init db"
+			deadline="20/11/2012" priority="1" done="false">
+			<description>initialisation de la db
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="plan cours" deadline="14/07/2012"
+			priority="2" done="true">
+			<description>cours et tds
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="supports cours et tds" deadline="15/10/2012"
+			priority="1" done="false">
+			<description>support PDF et PPT
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="relecture" deadline="30/10/2012"
+			priority="1" done="false">
+			<description>cours et tds pour voir
+			</description>
+			<asker>matLo</asker>
+			<owner>prof</owner>
+		</task>
+		<task title="tests" deadline="07/02/2014"
+			priority="2" done="false">
+			<description>notation
+			</description>
+			<asker>subProf</asker>
+			<owner>subProf</owner>
+		</task>
+		<task title="SVN" deadline="07/02/2014"
+			priority="1" done="false">
+			<description>eval 2
+			</description>
+			<asker>matLo</asker>
+			<owner>subProf</owner>
+		</task>
+	</tasks>
+	<!-- on ajoute des utilisateurs qui n'auront pas de tÃ¢ches (les autres seront 
+		crÃ©Ã©s automatiquement -->
+	<users>
+		<user name="paresseux" />
+	</users>
+</db_dump>
+Getting result: <?xml version="1.0" encoding="UTF-8"?><result><code>true</code><message>La base de données a été réinitialisée</message></result>
+>>>testTaskIdXMLValid(fr.enseirb.webxml.junit.testcase.tds.XMLValidTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/list/xml?id=1
+Getting result: <task id="1" title="init db" deadline="20/11/2012" priority="1" done="false" creationDate="08/01/2015" ><description>initialisation de la db
+			</description><asker>matLo</asker><owner>groupe</owner></task>
+==>OK
+>>>testTaskListXMLValid(fr.enseirb.webxml.junit.testcase.tds.XMLValidTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/list/xml
+Getting result: <tasks><task id="0" title="action 1" deadline="24/02/2014" priority="3" done="false" creationDate="08/01/2015" ><description>christmas
+			</description><asker>matLo</asker><owner>groupe</owner></task><task id="1" title="init db" deadline="20/11/2012" priority="1" done="false" creationDate="08/01/2015" ><description>initialisation de la db
+			</description><asker>matLo</asker><owner>groupe</owner></task><task id="2" title="plan cours" deadline="14/07/2012" priority="2" done="true" creationDate="08/01/2015" ><description>cours et tds
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="3" title="supports cours et tds" deadline="15/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>support PDF et PPT
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="4" title="relecture" deadline="30/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>cours et tds pour voir
+			</description><asker>matLo</asker><owner>prof</owner></task><task id="5" title="tests" deadline="07/02/2014" priority="2" done="false" creationDate="08/01/2015" ><description>notation
+			</description><asker>subProf</asker><owner>subProf</owner></task><task id="6" title="SVN" deadline="07/02/2014" priority="1" done="false" creationDate="08/01/2015" ><description>eval 2
+			</description><asker>matLo</asker><owner>subProf</owner></task></tasks>
+==>OK
+>>>testUserListXMLValid(fr.enseirb.webxml.junit.testcase.tds.XMLValidTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/user/list/xml
+Getting result: <users><user name="groupe"/> <user name="matLo"/> <user name="paresseux"/> <user name="prof"/> <user name="subProf"/> </users>
+==>OK
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/reinitdata
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<!-- le caractÃ¨re guillement (") est interdit dans les textes -->
+<db_dump>
+	<tasks>
+		<task title="action 1" deadline="24/02/2014"
+			priority="3" done="false">
+			<description>christmas
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="init db"
+			deadline="20/11/2012" priority="1" done="false">
+			<description>initialisation de la db
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="plan cours" deadline="14/07/2012"
+			priority="2" done="true">
+			<description>cours et tds
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="supports cours et tds" deadline="15/10/2012"
+			priority="1" done="false">
+			<description>support PDF et PPT
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="relecture" deadline="30/10/2012"
+			priority="1" done="false">
+			<description>cours et tds pour voir
+			</description>
+			<asker>matLo</asker>
+			<owner>prof</owner>
+		</task>
+		<task title="tests" deadline="07/02/2014"
+			priority="2" done="false">
+			<description>notation
+			</description>
+			<asker>subProf</asker>
+			<owner>subProf</owner>
+		</task>
+		<task title="SVN" deadline="07/02/2014"
+			priority="1" done="false">
+			<description>eval 2
+			</description>
+			<asker>matLo</asker>
+			<owner>subProf</owner>
+		</task>
+	</tasks>
+	<!-- on ajoute des utilisateurs qui n'auront pas de tÃ¢ches (les autres seront 
+		crÃ©Ã©s automatiquement -->
+	<users>
+		<user name="paresseux" />
+	</users>
+</db_dump>
+Getting result: <?xml version="1.0" encoding="UTF-8"?><result><code>true</code><message>La base de données a été réinitialisée</message></result>
+>>>testPostOwnership(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipPostTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/list/xml
+Getting result: <tasks><task id="0" title="action 1" deadline="24/02/2014" priority="3" done="false" creationDate="08/01/2015" ><description>christmas
+			</description><asker>matLo</asker><owner>groupe</owner></task><task id="1" title="init db" deadline="20/11/2012" priority="1" done="false" creationDate="08/01/2015" ><description>initialisation de la db
+			</description><asker>matLo</asker><owner>groupe</owner></task><task id="2" title="plan cours" deadline="14/07/2012" priority="2" done="true" creationDate="08/01/2015" ><description>cours et tds
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="3" title="supports cours et tds" deadline="15/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>support PDF et PPT
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="4" title="relecture" deadline="30/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>cours et tds pour voir
+			</description><asker>matLo</asker><owner>prof</owner></task><task id="5" title="tests" deadline="07/02/2014" priority="2" done="false" creationDate="08/01/2015" ><description>notation
+			</description><asker>subProf</asker><owner>subProf</owner></task><task id="6" title="SVN" deadline="07/02/2014" priority="1" done="false" creationDate="08/01/2015" ><description>eval 2
+			</description><asker>matLo</asker><owner>subProf</owner></task></tasks>
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/user/changeowner/post
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<changeowner taskId="1" newOwnerName="matLo"/>
+Getting result: Youpiii !!
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/list/xml
+Getting result: <tasks><task id="0" title="action 1" deadline="24/02/2014" priority="3" done="false" creationDate="08/01/2015" ><description>christmas
+			</description><asker>matLo</asker><owner>groupe</owner></task><task id="1" title="init db" deadline="20/11/2012" priority="1" done="false" creationDate="08/01/2015" ><description>initialisation de la db
+			</description><asker>matLo</asker><owner>matLo</owner></task><task id="2" title="plan cours" deadline="14/07/2012" priority="2" done="true" creationDate="08/01/2015" ><description>cours et tds
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="3" title="supports cours et tds" deadline="15/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>support PDF et PPT
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="4" title="relecture" deadline="30/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>cours et tds pour voir
+			</description><asker>matLo</asker><owner>prof</owner></task><task id="5" title="tests" deadline="07/02/2014" priority="2" done="false" creationDate="08/01/2015" ><description>notation
+			</description><asker>subProf</asker><owner>subProf</owner></task><task id="6" title="SVN" deadline="07/02/2014" priority="1" done="false" creationDate="08/01/2015" ><description>eval 2
+			</description><asker>matLo</asker><owner>subProf</owner></task></tasks>
+==>OK
+>>>testPostOwnership2(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipPostTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/user/task/changeowner/post
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<changeowner taskId="4" newOwnerName="matLo"/>
+Getting result: Youpiii !!
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/list/xml
+Getting result: <tasks><task id="0" title="action 1" deadline="24/02/2014" priority="3" done="false" creationDate="08/01/2015" ><description>christmas
+			</description><asker>matLo</asker><owner>groupe</owner></task><task id="1" title="init db" deadline="20/11/2012" priority="1" done="false" creationDate="08/01/2015" ><description>initialisation de la db
+			</description><asker>matLo</asker><owner>matLo</owner></task><task id="2" title="plan cours" deadline="14/07/2012" priority="2" done="true" creationDate="08/01/2015" ><description>cours et tds
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="3" title="supports cours et tds" deadline="15/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>support PDF et PPT
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="4" title="relecture" deadline="30/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>cours et tds pour voir
+			</description><asker>matLo</asker><owner>matLo</owner></task><task id="5" title="tests" deadline="07/02/2014" priority="2" done="false" creationDate="08/01/2015" ><description>notation
+			</description><asker>subProf</asker><owner>subProf</owner></task><task id="6" title="SVN" deadline="07/02/2014" priority="1" done="false" creationDate="08/01/2015" ><description>eval 2
+			</description><asker>matLo</asker><owner>subProf</owner></task></tasks>
+==>OK
+>>>testPostOwnership3(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipPostTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/list/xml
+Getting result: <tasks><task id="0" title="action 1" deadline="24/02/2014" priority="3" done="false" creationDate="08/01/2015" ><description>christmas
+			</description><asker>matLo</asker><owner>groupe</owner></task><task id="1" title="init db" deadline="20/11/2012" priority="1" done="false" creationDate="08/01/2015" ><description>initialisation de la db
+			</description><asker>matLo</asker><owner>matLo</owner></task><task id="2" title="plan cours" deadline="14/07/2012" priority="2" done="true" creationDate="08/01/2015" ><description>cours et tds
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="3" title="supports cours et tds" deadline="15/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>support PDF et PPT
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="4" title="relecture" deadline="30/10/2012" priority="1" done="false" creationDate="08/01/2015" ><description>cours et tds pour voir
+			</description><asker>matLo</asker><owner>matLo</owner></task><task id="5" title="tests" deadline="07/02/2014" priority="2" done="false" creationDate="08/01/2015" ><description>notation
+			</description><asker>subProf</asker><owner>subProf</owner></task><task id="6" title="SVN" deadline="07/02/2014" priority="1" done="false" creationDate="08/01/2015" ><description>eval 2
+			</description><asker>matLo</asker><owner>subProf</owner></task></tasks>
+==>Failed
+==>OK
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/reinitdata
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<!-- le caractÃ¨re guillement (") est interdit dans les textes -->
+<db_dump>
+	<tasks>
+		<task title="action 1" deadline="24/02/2014"
+			priority="3" done="false">
+			<description>christmas
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="init db"
+			deadline="20/11/2012" priority="1" done="false">
+			<description>initialisation de la db
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="plan cours" deadline="14/07/2012"
+			priority="2" done="true">
+			<description>cours et tds
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="supports cours et tds" deadline="15/10/2012"
+			priority="1" done="false">
+			<description>support PDF et PPT
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="relecture" deadline="30/10/2012"
+			priority="1" done="false">
+			<description>cours et tds pour voir
+			</description>
+			<asker>matLo</asker>
+			<owner>prof</owner>
+		</task>
+		<task title="tests" deadline="07/02/2014"
+			priority="2" done="false">
+			<description>notation
+			</description>
+			<asker>subProf</asker>
+			<owner>subProf</owner>
+		</task>
+		<task title="SVN" deadline="07/02/2014"
+			priority="1" done="false">
+			<description>eval 2
+			</description>
+			<asker>matLo</asker>
+			<owner>subProf</owner>
+		</task>
+	</tasks>
+	<!-- on ajoute des utilisateurs qui n'auront pas de tÃ¢ches (les autres seront 
+		crÃ©Ã©s automatiquement -->
+	<users>
+		<user name="paresseux" />
+	</users>
+</db_dump>
+Getting result: <?xml version="1.0" encoding="UTF-8"?><result><code>true</code><message>La base de données a été réinitialisée</message></result>
+>>>testPostOwnershipIsValid1_ok(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXSDTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/user/changeowner/post/isValid
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<changeowner taskId="1" newOwnerName="matLo"/>
+Getting result: <?xml version="1.0" encoding="UTF-8"?><result><code>true</code><message>/task/user</message></result>
+==>OK
+>>>testPostOwnershipIsValid2_ok2(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXSDTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/user/task/changeowner/post/isValid
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<changeowner taskId="4" newOwnerName="matLo"/>
+Getting result: <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Error 405 HTTP method POST is not supported by this URL</title>
+</head>
+<body><h2>HTTP ERROR 405</h2>
+<p>Problem accessing /EnseirbWebXMLWebapp/user/task/changeowner/post/isValid. Reason:
+<pre>    HTTP method POST is not supported by this URL</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+
+</body>
+</html>
+
+==>Failed
+==>OK
+>>>testPostOwnershipIsValid3_id_noint(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXSDTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/user/changeowner/post/isValid
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<changeowner taskId="a" newOwnerName="matLo"/>
+Getting result: <?xml version="1.0" encoding="UTF-8"?><result><code>false</code><message>/task/user</message></result>
+==>OK
+>>>testPostOwnershipIsValid4_no_username(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXSDTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/user/changeowner/post/isValid
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<changeowner taskId="1"/>
+Getting result: <?xml version="1.0" encoding="UTF-8"?><result><code>false</code><message>/task/user</message></result>
+==>OK
+>>>testPostOwnershipIsValid5_more_att(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXSDTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/user/task/changeowner/post/isValid
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<changeowner taskId="1" newOwnerName="matLo" bozo="123" />
+Getting result: <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Error 405 HTTP method POST is not supported by this URL</title>
+</head>
+<body><h2>HTTP ERROR 405</h2>
+<p>Problem accessing /EnseirbWebXMLWebapp/user/task/changeowner/post/isValid. Reason:
+<pre>    HTTP method POST is not supported by this URL</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+
+</body>
+</html>
+
+==>Failed
+==>OK
+>>>testPostOwnershipIsValid6_children(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXSDTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/user/task/changeowner/post/isValid
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<changeowner taskId="a" newOwnerName="matLo">
+	<user name="matLo" />
+</changeowner>
+Getting result: <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Error 405 HTTP method POST is not supported by this URL</title>
+</head>
+<body><h2>HTTP ERROR 405</h2>
+<p>Problem accessing /EnseirbWebXMLWebapp/user/task/changeowner/post/isValid. Reason:
+<pre>    HTTP method POST is not supported by this URL</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+
+</body>
+</html>
+
+==>Failed
+==>OK
+>>>testPostOwnershipIsValid7_children2(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXSDTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/user/task/changeowner/post/isValid
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<changeowner taskId="a" newOwnerName="matLo">
+	<user name="matLo" />
+</changeowner>
+Getting result: <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Error 405 HTTP method POST is not supported by this URL</title>
+</head>
+<body><h2>HTTP ERROR 405</h2>
+<p>Problem accessing /EnseirbWebXMLWebapp/user/task/changeowner/post/isValid. Reason:
+<pre>    HTTP method POST is not supported by this URL</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+
+</body>
+</html>
+
+==>Failed
+==>OK
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/reinitdata
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<!-- le caractÃ¨re guillement (") est interdit dans les textes -->
+<db_dump>
+	<tasks>
+		<task title="action 1" deadline="24/02/2014"
+			priority="3" done="false">
+			<description>christmas
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="init db"
+			deadline="20/11/2012" priority="1" done="false">
+			<description>initialisation de la db
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="plan cours" deadline="14/07/2012"
+			priority="2" done="true">
+			<description>cours et tds
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="supports cours et tds" deadline="15/10/2012"
+			priority="1" done="false">
+			<description>support PDF et PPT
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="relecture" deadline="30/10/2012"
+			priority="1" done="false">
+			<description>cours et tds pour voir
+			</description>
+			<asker>matLo</asker>
+			<owner>prof</owner>
+		</task>
+		<task title="tests" deadline="07/02/2014"
+			priority="2" done="false">
+			<description>notation
+			</description>
+			<asker>subProf</asker>
+			<owner>subProf</owner>
+		</task>
+		<task title="SVN" deadline="07/02/2014"
+			priority="1" done="false">
+			<description>eval 2
+			</description>
+			<asker>matLo</asker>
+			<owner>subProf</owner>
+		</task>
+	</tasks>
+	<!-- on ajoute des utilisateurs qui n'auront pas de tÃ¢ches (les autres seront 
+		crÃ©Ã©s automatiquement -->
+	<users>
+		<user name="paresseux" />
+	</users>
+</db_dump>
+Getting result: <?xml version="1.0" encoding="UTF-8"?><result><code>true</code><message>La base de données a été réinitialisée</message></result>
+>>>testXpathOwnership1(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/ownership?taskId=1
+Getting result: <!-- <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'> -->
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="user-scalable=no,width=device-width" />
+  <link
+     href="./jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.css"
+     rel="stylesheet" />
+  <script src="./jquery.mobile-1.2.0/jquery-1.8.2.min.js"></script>
+<script
+   src="./jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.js"></script>
+<title>Gestion des taches</title>
+  </head>
+  <body>
+    <div data-role="header">
+      <h1>Gestion des taches</h1>
+    </div>
+    <div data-role="content">
+      <ul data-role="listview">
+	<li><a href="./task/list/xml" target="_self">Toutes les taches</a>
+	</li>
+	<li><a href="./user/list/xml" target="_self">Tous les utilisateurs</a>
+	</li>
+	<li><a href="./user/create" target="_self">Nouvel Utilisateur</a>
+	</li>
+	<li><a href="./task/create" target="_self">Nouvelle Tache</a>
+	</li>
+
+	<li><a href="./about" target="_self">About Student</a>
+	</li>
+	<li><a href="./about/teacher" target="_self">About Teacher</a>
+	</li>
+	<li><a href="./about?action=teacher" target="_self">Teacher Name</a>
+	</li>
+	<li><a href="./user/create/url?name=Charlie Brown" target="_self">Add user Charlie Brown</a>
+	</li>
+	<li><a href="./task/create/url?title=bjr&description=blabla&deadline=10/11/2014&priority=3&owner=RoyceDa&asker=iiiii&done=true" target="_self">Add task 777</a>
+	</li>
+	
+	<li><a href="./stats/xml" target="_self">Statistiques</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
+
+==>Failed
+==>OK
+>>>testXpathOwnership2(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/ownership?taskId=2
+Getting result: <!-- <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'> -->
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="user-scalable=no,width=device-width" />
+  <link
+     href="./jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.css"
+     rel="stylesheet" />
+  <script src="./jquery.mobile-1.2.0/jquery-1.8.2.min.js"></script>
+<script
+   src="./jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.js"></script>
+<title>Gestion des taches</title>
+  </head>
+  <body>
+    <div data-role="header">
+      <h1>Gestion des taches</h1>
+    </div>
+    <div data-role="content">
+      <ul data-role="listview">
+	<li><a href="./task/list/xml" target="_self">Toutes les taches</a>
+	</li>
+	<li><a href="./user/list/xml" target="_self">Tous les utilisateurs</a>
+	</li>
+	<li><a href="./user/create" target="_self">Nouvel Utilisateur</a>
+	</li>
+	<li><a href="./task/create" target="_self">Nouvelle Tache</a>
+	</li>
+
+	<li><a href="./about" target="_self">About Student</a>
+	</li>
+	<li><a href="./about/teacher" target="_self">About Teacher</a>
+	</li>
+	<li><a href="./about?action=teacher" target="_self">Teacher Name</a>
+	</li>
+	<li><a href="./user/create/url?name=Charlie Brown" target="_self">Add user Charlie Brown</a>
+	</li>
+	<li><a href="./task/create/url?title=bjr&description=blabla&deadline=10/11/2014&priority=3&owner=RoyceDa&asker=iiiii&done=true" target="_self">Add task 777</a>
+	</li>
+	
+	<li><a href="./stats/xml" target="_self">Statistiques</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
+
+==>Failed
+==>OK
+>>>testXpathOwnership3(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/user/ownership?ownerName=matLo
+Getting result: init
+==>Failed
+==>OK
+>>>testXpathOwnership4(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/user/ownership?ownerName=groupe
+Getting result: init
+==>Failed
+==>OK
+>>>testXpathOwnership5(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/reinitdata
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<!-- le caractÃ¨re guillement (") est interdit dans les textes -->
+<db_dump>
+	<tasks>
+		<task title="action1" deadline="24/12/2012"
+			priority="3" done="true">
+			<description>christmas
+			</description>
+			<asker>matLo</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="plan cours 2" deadline="14/07/2012"
+			priority="2" done="false">
+			<description>cours et tds
+			</description>
+			<asker>prof</asker>
+			<owner>subProf</owner>
+		</task>
+		<task title="supports cours et tds" deadline="15/10/2012"
+			priority="1" done="false">
+			<description>support PDF et PPT
+			</description>
+			<asker>matLo</asker>
+			<owner>prof</owner>
+		</task>
+		<task title="relecture2" deadline="30/10/2012"
+			priority="1" done="false">
+			<description>cours et tds pour voir
+			</description>
+			<asker>matLo</asker>
+			<owner>prof</owner>
+		</task>
+		<task title="tests2" deadline="07/01/2013"
+			priority="2" done="true">
+			<description>notation
+			</description>
+			<asker>subProf</asker>
+			<owner>subProf</owner>
+		</task>
+		<task title="SVN" deadline="07/01/2013"
+			priority="1" done="true">
+			<description>eval 2
+			</description>
+			<asker>matLo</asker>
+			<owner>subProf</owner>
+		</task>
+	</tasks>
+	<!-- on ajoute des utilisateurs qui n'auront pas de tÃ¢ches (les autres seront 
+		crÃ©Ã©s automatiquement -->
+	<users>
+		<user name="grognon" />
+	</users>
+</db_dump>
+Getting result: <?xml version="1.0" encoding="UTF-8"?><result><code>true</code><message>La base de données a été réinitialisée</message></result>
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/ownership?taskId=1
+Getting result: <!-- <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'> -->
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="user-scalable=no,width=device-width" />
+  <link
+     href="./jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.css"
+     rel="stylesheet" />
+  <script src="./jquery.mobile-1.2.0/jquery-1.8.2.min.js"></script>
+<script
+   src="./jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.js"></script>
+<title>Gestion des taches</title>
+  </head>
+  <body>
+    <div data-role="header">
+      <h1>Gestion des taches</h1>
+    </div>
+    <div data-role="content">
+      <ul data-role="listview">
+	<li><a href="./task/list/xml" target="_self">Toutes les taches</a>
+	</li>
+	<li><a href="./user/list/xml" target="_self">Tous les utilisateurs</a>
+	</li>
+	<li><a href="./user/create" target="_self">Nouvel Utilisateur</a>
+	</li>
+	<li><a href="./task/create" target="_self">Nouvelle Tache</a>
+	</li>
+
+	<li><a href="./about" target="_self">About Student</a>
+	</li>
+	<li><a href="./about/teacher" target="_self">About Teacher</a>
+	</li>
+	<li><a href="./about?action=teacher" target="_self">Teacher Name</a>
+	</li>
+	<li><a href="./user/create/url?name=Charlie Brown" target="_self">Add user Charlie Brown</a>
+	</li>
+	<li><a href="./task/create/url?title=bjr&description=blabla&deadline=10/11/2014&priority=3&owner=RoyceDa&asker=iiiii&done=true" target="_self">Add task 777</a>
+	</li>
+	
+	<li><a href="./stats/xml" target="_self">Statistiques</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
+
+==>Failed
+==>OK
+>>>testXpathOwnership6(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/ownership?taskId=2
+Getting result: <!-- <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'> -->
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="user-scalable=no,width=device-width" />
+  <link
+     href="./jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.css"
+     rel="stylesheet" />
+  <script src="./jquery.mobile-1.2.0/jquery-1.8.2.min.js"></script>
+<script
+   src="./jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.js"></script>
+<title>Gestion des taches</title>
+  </head>
+  <body>
+    <div data-role="header">
+      <h1>Gestion des taches</h1>
+    </div>
+    <div data-role="content">
+      <ul data-role="listview">
+	<li><a href="./task/list/xml" target="_self">Toutes les taches</a>
+	</li>
+	<li><a href="./user/list/xml" target="_self">Tous les utilisateurs</a>
+	</li>
+	<li><a href="./user/create" target="_self">Nouvel Utilisateur</a>
+	</li>
+	<li><a href="./task/create" target="_self">Nouvelle Tache</a>
+	</li>
+
+	<li><a href="./about" target="_self">About Student</a>
+	</li>
+	<li><a href="./about/teacher" target="_self">About Teacher</a>
+	</li>
+	<li><a href="./about?action=teacher" target="_self">Teacher Name</a>
+	</li>
+	<li><a href="./user/create/url?name=Charlie Brown" target="_self">Add user Charlie Brown</a>
+	</li>
+	<li><a href="./task/create/url?title=bjr&description=blabla&deadline=10/11/2014&priority=3&owner=RoyceDa&asker=iiiii&done=true" target="_self">Add task 777</a>
+	</li>
+	
+	<li><a href="./stats/xml" target="_self">Statistiques</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
+
+==>Failed
+==>OK
+>>>testXpathOwnership7(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/user/ownership?ownerName=matLo
+Getting result: init
+==>Failed
+==>OK
+>>>testXpathOwnership8(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipXPathTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/user/ownership?ownerName=groupe
+Getting result: init
+==>Failed
+==>OK
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/reinitdata
+Posting data: <?xml version="1.0" encoding="UTF-8"?>
+<!-- le caractÃ¨re guillement (") est interdit dans les textes -->
+<db_dump>
+	<tasks>
+		<task title="action 1" deadline="24/02/2014"
+			priority="3" done="false">
+			<description>christmas
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="init db"
+			deadline="20/11/2012" priority="1" done="false">
+			<description>initialisation de la db
+			</description>
+			<asker>matLo</asker>
+			<owner>groupe</owner>
+		</task>
+		<task title="plan cours" deadline="14/07/2012"
+			priority="2" done="true">
+			<description>cours et tds
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="supports cours et tds" deadline="15/10/2012"
+			priority="1" done="false">
+			<description>support PDF et PPT
+			</description>
+			<asker>prof</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="relecture" deadline="30/10/2012"
+			priority="1" done="false">
+			<description>cours et tds pour voir
+			</description>
+			<asker>matLo</asker>
+			<owner>prof</owner>
+		</task>
+		<task title="tests" deadline="07/02/2014"
+			priority="2" done="false">
+			<description>notation
+			</description>
+			<asker>subProf</asker>
+			<owner>subProf</owner>
+		</task>
+		<task title="SVN" deadline="07/02/2014"
+			priority="1" done="false">
+			<description>eval 2
+			</description>
+			<asker>matLo</asker>
+			<owner>subProf</owner>
+		</task>
+	</tasks>
+	<!-- on ajoute des utilisateurs qui n'auront pas de tÃ¢ches (les autres seront 
+		crÃ©Ã©s automatiquement -->
+	<users>
+		<user name="paresseux" />
+	</users>
+</db_dump>
+Getting result: <?xml version="1.0" encoding="UTF-8"?><result><code>true</code><message>La base de données a été réinitialisée</message></result>
+>>>testCSVOwnership(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipCSVTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/ownership/csv
+Getting result: init
+==>Failed
+==>OK
+>>>testCSVOwnership2(fr.enseirb.webxml.junit.testcase.eval.ownership.OwnershipCSVTestCase)
+Invoking URL: localhost:5500/EnseirbWebXMLWebapp/task/ownership/csv
+Getting result: init
+==>Failed
+==>OK
