@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:task="http://enseirb/task">
+	<xsd:element name="task">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="description" type="xsd:string" />
+				<xsd:element name="asker" type="xsd:string" />
+				<xsd:element name="owner" type="xsd:string" />
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:int" use="optional" />
+			<xsd:attribute name="title" type="xsd:string" use="required" />
+			<xsd:attribute name="creationDate" type="xsd:string"
+				use="optional" />
+			<xsd:attribute name="deadline" type="xsd:string" use="required" />
+			<xsd:attribute name="priority" use="required">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:int">
+						<xsd:minInclusive value="1" />
+						<xsd:maxInclusive value="5" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="done" type="xsd:boolean" use="required" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

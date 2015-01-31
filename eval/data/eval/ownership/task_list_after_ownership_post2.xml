@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><tasks><task id="0" title="action 1" creationDate="17/12/2014" deadline="24/02/2014" priority="3" done="false"><description>christmas
+			</description><asker>matLo</asker><owner>groupe</owner></task><task id="1" title="init db" creationDate="17/12/2014" deadline="20/11/2012" priority="1" done="false"><description>initialisation de la db
+			</description><asker>matLo</asker><owner>matLo</owner></task><task id="2" title="plan cours" creationDate="17/12/2014" deadline="14/07/2012" priority="2" done="true"><description>cours et tds
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="3" title="supports cours et tds" creationDate="17/12/2014" deadline="15/10/2012" priority="1" done="false"><description>support PDF et PPT
+			</description><asker>prof</asker><owner>matLo</owner></task><task id="4" title="relecture" creationDate="17/12/2014" deadline="30/10/2012" priority="1" done="false"><description>cours et tds pour voir
+			</description><asker>matLo</asker><owner>matLo</owner></task><task id="5" title="tests" creationDate="17/12/2014" deadline="07/02/2014" priority="2" done="false"><description>notation
+			</description><asker>subProf</asker><owner>subProf</owner></task><task id="6" title="SVN" creationDate="17/12/2014" deadline="07/02/2014" priority="1" done="false"><description>eval 2
+			</description><asker>matLo</asker><owner>subProf</owner></task></tasks>

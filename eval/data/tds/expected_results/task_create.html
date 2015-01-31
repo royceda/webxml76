@@ -1,0 +1,70 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="user-scalable=no,width=device-width" name="viewport">
+<script src="../js/toolkit.js" type="text/javascript"></script><script src="../js/crud_task.js" type="text/javascript"></script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css">
+<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script><script src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+<title>Cr&eacute;ation d'une nouvelle t&acirc;che</title>
+</head>
+<body>
+<div data-role="header">
+<h1>Nouvelle t&acirc;che</h1>
+<a title="Retour" href="#" data-icon="back" data-iconpos="notext" data-rel="back">Retour</a>
+</div>
+<div data-role="content">
+<form action="#" method="post">
+<div data-role="fieldcontain">
+<label for="fId">
+								ID
+							</label><input id="fId" type="text" readonly value="-1">
+</div>
+<div data-role="fieldcontain">
+<label for="fCreationDate">
+								Date de cr&eacute;ation
+							</label><input id="fCreationDate" type="text" readonly value="09/12/2012">
+</div>
+<div data-role="fieldcontain">
+<label for="fTitle">
+								Titre
+							</label><input id="fTitle" type="text" value="">
+</div>
+<div data-role="fieldcontain">
+<label for="fDescription">
+								Description
+							</label><textarea id="fDescription" rows="3"></textarea>
+</div>
+<div data-role="fieldcontain">
+<label for="fAsker">
+								Demandeur
+							</label><input id="fAsker" type="text" value="">
+</div>
+<div data-role="fieldcontain">
+<label for="fOwner">
+								Responsable
+							</label><input id="fOwner" type="text" value="">
+</div>
+<div data-role="fieldcontain">
+<label for="fDeadline">
+								Deadline
+							</label><input id="fDeadline" type="text" value="09/12/2012">
+</div>
+<div data-role="fieldcontain">
+<label for="fPriority">
+								Priorit&eacute;
+							</label><input id="fPriority" type="range" min="1" max="5" value="0">
+</div>
+<div data-role="fieldcontain">
+<fieldset data-role="controlgroup">
+<label for="fDone">
+									Finie
+								</label><input id="fDone" type="checkbox">
+</fieldset>
+</div>
+</form>
+</div>
+<a href="javascript:postTask();" data-role="button">Ajouter</a>
+<div id="creationResult"></div>
+</body>
+</html>

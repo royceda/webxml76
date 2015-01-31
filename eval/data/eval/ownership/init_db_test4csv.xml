@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- le caractère guillement (") est interdit dans les textes -->
+<db_dump>
+	<tasks>
+		<task title="action1" deadline="24/12/2012"
+			priority="3" done="true">
+			<description>christmas
+			</description>
+			<asker>matLo</asker>
+			<owner>matLo</owner>
+		</task>
+		<task title="plan cours 2" deadline="14/07/2012"
+			priority="2" done="false">
+			<description>cours et tds
+			</description>
+			<asker>prof</asker>
+			<owner>subProf</owner>
+		</task>
+		<task title="supports cours et tds" deadline="15/10/2012"
+			priority="1" done="false">
+			<description>support PDF et PPT
+			</description>
+			<asker>matLo</asker>
+			<owner>prof</owner>
+		</task>
+		<task title="relecture2" deadline="30/10/2012"
+			priority="1" done="false">
+			<description>cours et tds pour voir
+			</description>
+			<asker>matLo</asker>
+			<owner>prof</owner>
+		</task>
+		<task title="tests2" deadline="07/01/2013"
+			priority="2" done="true">
+			<description>notation
+			</description>
+			<asker>subProf</asker>
+			<owner>subProf</owner>
+		</task>
+		<task title="SVN" deadline="07/01/2013"
+			priority="1" done="true">
+			<description>eval 2
+			</description>
+			<asker>matLo</asker>
+			<owner>subProf</owner>
+		</task>
+	</tasks>
+	<!-- on ajoute des utilisateurs qui n'auront pas de tâches (les autres seront 
+		créés automatiquement -->
+	<users>
+		<user name="grognon" />
+	</users>
+</db_dump>

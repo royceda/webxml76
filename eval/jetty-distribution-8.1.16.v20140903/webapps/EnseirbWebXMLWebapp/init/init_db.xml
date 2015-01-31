@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- le caractère guillement (") est interdit dans les textes -->
+<db_dump>
+  <tasks>
+    <task title="Compléter le web.xml" deadline="24/12/2011"
+	  priority="3" done="false">
+      <description>Pour pouvoir réferencer d'autres servlet, le web.xml
+      doit eêtre enrichie
+      </description>
+      <asker>matLo</asker>
+      <owner>groupe</owner>
+    </task>
+    <task title="Initialiser les données avec le fichier d'init"
+	  deadline="20/11/2011" priority="1" done="false">
+      <description>Pour pouvoir initialiser la base avec un jeu de données
+      précis. Cela permettra de lancer les tests automatiques
+      </description>
+      <asker>matLo</asker>
+      <owner>groupe</owner>
+    </task>
+    <task title="Etablir le plan des cours" deadline="14/07/2011"
+	  priority="2" done="true">
+      <description>Afin de s'assurer qu'on est bien d'accord entre Fred et
+      Mat pour le contenu des cours et TDs
+      </description>
+      <asker>fherbret</asker>
+      <owner>matLo</owner>
+    </task>
+    <task title="Préparer les cours et TDs" deadline="15/10/2011"
+	  priority="1" done="false">
+      <description>Et s'assurer que tout fonctionne bien !
+      </description>
+      <asker>fherbret</asker>
+      <owner>matLo</owner>
+    </task>
+    <task title="Faire relire les cours et les TDs" deadline="30/10/2011"
+	  priority="1" done="false">
+      <description>Pour être sûr que les élèves comprendront le cours et
+      les TDs
+      </description>
+      <asker>matLo</asker>
+      <owner>fherbret</owner>
+    </task>
+  </tasks>
+  <!-- on ajoute des utilisateurs qui n'auront pas de tâches (les autres seront 
+       créés automatiquement 
+       <users>
+       <user name="paresseux" />
+       </users>-->
+</db_dump>

@@ -1,0 +1,32 @@
+<!-- <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'> -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="user-scalable=no,width=device-width" />
+    <link
+       href="../jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.css"
+       rel="stylesheet" />
+    <script src="../jquery.mobile-1.2.0/jquery-1.8.2.min.js"></script>
+    <script
+       src="../jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <script type="text/javascript" src="../js/toolkit.js"></script>
+    <script type="text/javascript" src="../js/create_user.js"></script>
+    <title>Renseignement de l'enseignant</title>
+  </head>
+  <body>
+    <div data-role="header">
+      <h1>Renseignement de l'enseignant</h1>
+      <a title="Retour" href="#" data-icon="back" data-iconpos="notext"
+	 data-rel="back">Retour</a>
+    </div>
+    <div data-role="content">
+      <form action="#" method="post">
+	<div data-role="fieldcontain">
+	  <label for="fTeacher">Enseignant</label><input id="fTeacher"
+							 type="text" value="">
+	</div>
+      </form>
+    </div>
+    <a href="javascript:postcreate_user(document.getElementById('fTeacher').value);" data-role="button">Ajouter</a>
+  </body>
+</html>
