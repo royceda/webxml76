@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -48,10 +49,11 @@ public class XMLMediator {
     public static final void appendTaskXML(Task task, StringBuilder buffer) {
 	buffer.append("<task id=\"").append(task.getId()).append("\" ");
 	buffer.append("title=\"").append(task.getTitle()).append("\" ");
-	buffer.append("creationDate=\"").append(DATE_FORMAT.format(task.getCreationDate())).append("\" ");
+
 	buffer.append("deadline=\"").append(DATE_FORMAT.format(task.getDeadline())).append("\" ");
 	buffer.append("priority=\"").append(task.getPriority()).append("\" ");
-	buffer.append("done=\"").append(Boolean.toString(task.isDone())).append("\">");
+	buffer.append("done=\"").append(Boolean.toString(task.isDone())).append("\" ");
+	buffer.append("creationDate=\"").append(DATE_FORMAT.format(task.getCreationDate())).append("\" >");
 	buffer.append("<description>").append(task.getDescription()).append("</description>");
 	buffer.append("<asker>").append(task.getAsker()).append("</asker>");
 	buffer.append("<owner>").append(task.getOwner()).append("</owner>");
@@ -73,16 +75,21 @@ public class XMLMediator {
 	
 	// TODO : créer le flux XML correspondant aux tâches
 
-	String synt = "<tasks>";
-	
+	String tasksXML = "<tasks>";
+	StringBuilder task = new StringBuilder();
 	for(int i=0; i<tasks.size(); i++)
-	    synt = synt + " <task id=" + tasks.get(i).getId() +" deadline=" + tasks.get(i).getDeadline() + " priority=" + tasks.get(i).getPriority() + " done=" + tasks.get(i).isDone() + " creationDate=" + tasks.get(i).getCreationDate() + " \n<descrition>ddd</description>\n<asker>aaa</asker>\n<owner>ooo</owner>";
+	    /*tasksXML = tasksXML +"<task id=" +tasks.get(i).getId() +" deadline=\"" +tasks.get(i).getDeadline() + "\" priority=\"" +tasks.get(i).getPriority() +"\" done=\"" +tasks.get(i).isDone() +"\" creationDate=\"" +tasks.get(i).getCreationDate() +"\"> <descrition>ddd</description> <asker>aaa</asker> <owner>ooo</owner> </task> ";*/
+	    appendTaskXML(tasks.get(i), task);
 	
-	synt = synt + " \n</tasks>";
-	
-	String tasksXML = synt;
-	LOGGER.log(Level.INFO, "XML Tasks are: " + tasksXML);
-	return tasksXML;
+	tasksXML = tasksXML + task + "</tasks>";
+
+	if(XMLToolkit.isXMLValid(tasksXML, "/resources/xsd/tasks.xsd")){
+	    LOGGER.log(Level.INFO, "XML Tasks are: " + tasksXML);
+	    return tasksXML;
+	}
+	else
+	    return "<error>nooooon</error>";
+       
     }
     
     /**
@@ -96,14 +103,13 @@ public class XMLMediator {
 	Task task = DBManager.INSTANCE.getTaskDAO().getTask(id);
 	
 	// TODO : créer le flux XML correspondant à la tâche demandée
-
-	String taskXML = "<\task>";
+	String taskXML = "";
+	StringBuilder taskS = new StringBuilder();
 	
-	taskXML = taskXML + " <task id=" + task.getId() + " deadline=" + task.getDeadline() + " priority=" + task.getPriority() + " done=" + task.isDone() + " creationDate=" + task.getCreationDate() + " \n<descrition>ddd</description>\n<asker>aaa</asker>\n<owner>ooo</owner>";
+	appendTaskXML(task, taskS);
 
-	taskXML = taskXML +"\n<task>";
-
-
+	taskXML = taskXML + taskS ;
+      
 	LOGGER.log(Level.INFO, "XML Task with id " + id + " is: " + taskXML);
 	return taskXML;
     }
@@ -119,42 +125,16 @@ public class XMLMediator {
      * @return true si si l'ajout ou la modification s'est bien passé, false sinon
      */
     public static boolean addOrModifyTask(String taskXML) {
+	if (!XMLToolkit.isXMLValid(taskXML, "resources/xsd/task.xsd"))
+	    return false;
 	LOGGER.log(Level.INFO, "Adding or modifying Task stream: " + taskXML);
 	
-	boolean success;
-	try {
-	    Task task = new Task();
-	    String sId = taskElt.getAttribute("id");
-	    if (sId != null && !sId.isEmpty()) {
-		task.setId(Integer.parseInt(sId));
-	    }
-	    task.setTitle(taskElt.getAttribute("title"));
-	    task.setDescription(((Element) taskElt.getElementsByTagName("description").item(0)).getTextContent());
-	    String sDate = taskElt.getAttribute("creationDate");
-	    if (sDate != null && !sDate.isEmpty()) {
-		task.setCreationDate(DATE_FORMAT.parse(sDate));
-	    }
-	    task.setDeadline(DATE_FORMAT.parse(taskElt.getAttribute("deadline")));
-	    task.setDone(Boolean.parseBoolean(taskElt.getAttribute("done")));
-	    task.setOwner(((Element) taskElt.getElementsByTagName("owner").item(0)).getTextContent());
-	    task.setAsker(((Element) taskElt.getElementsByTagName("asker").item(0)).getTextContent());
-	    task.setPriority(Integer.parseInt(taskElt.getAttribute("priority")));
-	    success = DBManager.INSTANCE.getTaskDAO().addOrModify(task);
-	    if (success) {
-		// on rajoute les utilisateurs au passage
-		DBManager.INSTANCE.getUserDAO().addUser(new User(task.getAsker()));
-		DBManager.INSTANCE.getUserDAO().addUser(new User(task.getOwner()));
-	    }
-	}	 
-	catch (ParseException e) {
-	    LOGGER.log(Level.INFO, "Problem while adding or modifying", e);
-	    success = false;
-	}
-	
-	return success;
+	Document doc = XMLToolkit.parseDocument(taskXML);
+	Element taskElt = doc.getDocumentElement();
+	return addOrModifyTask(taskElt);
     }
-    	
     
+    	
     /**
      * Permet d'ajouter (si l'id n'est pas fourni) ou modifier (si l'id est founir) une tâche à la base de données à
      * partir de l'objet Element fourni, correspondant au flux XML
@@ -171,11 +151,42 @@ public class XMLMediator {
 	boolean success;
 	try {
 	    Task task = new Task();
-	    
+	    String s = "";
 	    // TODO compléter la création de l'objet Task
 	    // pour la date, utiliser le code ci-dessous
-	    task.setDeadline(DATE_FORMAT.parse(taskElt.getAttribute("deadline")));
 	    
+	    s = taskElt.getAttribute("id");
+	    if(!s.isEmpty())
+		task.setId(Integer.parseInt(s));
+	   
+	    s = taskElt.getAttribute("title");
+	    if(!s.isEmpty())
+		task.setTitle(s);
+	    
+	    s = taskElt.getElementsByTagName("description").item(0).getTextContent();
+	    if(!s.isEmpty())
+		task.setDescription(s);
+	    
+	    s = taskElt.getAttribute("deadline");
+	    if(!s.isEmpty())
+		task.setDeadline(DATE_FORMAT.parse(s));
+
+	    s = taskElt.getAttribute("priority");
+	    if(!s.isEmpty())
+		task.setPriority(Integer.parseInt(s));
+	    
+	    s = taskElt.getAttribute("done");
+	    if(!s.isEmpty())
+		task.setDone(Boolean.parseBoolean(s));
+	    
+	    s = taskElt.getElementsByTagName("asker").item(0).getTextContent();
+	    if(!s.isEmpty())
+		task.setAsker(s);
+	    
+	    s = taskElt.getElementsByTagName("owner").item(0).getTextContent();
+	    if(!s.isEmpty())
+		task.setOwner(s);
+	    	    	    
 	    success = DBManager.INSTANCE.getTaskDAO().addOrModify(task);
 	    if (success) {
 		// on rajoute les utilisateurs au passage
@@ -202,16 +213,17 @@ public class XMLMediator {
 	
 	String synt = "<users>";	
 	for(int i=0; i < users.size(); i++)
-	    synt = synt +"\n<user name=" +users.get(i).getName() +"/>";
-	synt = synt +"\n</users>";
+	    synt = synt +"<user name=\"" +users.get(i).getName() +"\"/> ";
+	synt = synt +"</users>";
 	
-
 	String usersXML = synt;
-	LOGGER.log(Level.INFO, "XML Users are: " + usersXML);
-	return usersXML;
+	if(XMLToolkit.isXMLValid(synt, "/resources/xsd/users.xsd")){
+	    LOGGER.log(Level.INFO, "XML Users are: " + usersXML);
+	    return usersXML;
+	}
+	else
+	    return "<error>Non conforme au xsd</error>"; 
     }
-
-    
     /**
      * Permet d'ajouter un utilisateur en base de données à partir d'un flux XML fourni
      * 
@@ -231,16 +243,16 @@ public class XMLMediator {
      * Permet d'ajouter un utilisateur en base de données à partir d'un objet Element correspondant à un flux XML
      * 
      * @param userXML
-     *            L'objet Element correspondant au flux XML d'un utilisateur, sous la forme : <user name="xxx"/>
+     * L'objet Element correspondant au flux XML d'un utilisateur, sous la forme : <user name="xxx"/>
      * @return true si l'ajout s'est bien passé, et false sinon
      */
     public static boolean addUser(Element userElt) {
 	LOGGER.log(Level.INFO, "Adding User element: ");
 	
 	// TODO : remplir la variable "name" avec la valeur de l'attribut "name" de userElt
-	String name = "";
+	String name = userElt.getAttribute("name");
 	User user = new User(name);
-	
+	//on rajoute dans la DB
 	return DBManager.INSTANCE.getUserDAO().addUser(user);
     }
     
@@ -265,14 +277,82 @@ public class XMLMediator {
 	
 	String nowDate = year + month + day;
 	String xPathDate = "concat(substring(@deadline,7,4), substring(@deadline,4,2), substring(@deadline,1,2))";
-
+	String current_user, 
+	    current_task,
+	    current_task_done,
+	    current_task_late,
+	    current_task_intime;
 	// TODO : créer un flux XML pour les stats
 	
-	String statsXML = "";
+
+	
+	String statsXML = "<stats>";
+	List<String> listUsersName = XMLToolkit.getXPathValues(users, "users/user/@name");
+	ListIterator<String> listUsersName2 = listUsersName.listIterator();
+	while (listUsersName2.hasNext()) {
+	    current_user = listUsersName2.next();
+	    List<String> listTaskUser = XMLToolkit.getXPathValues(tasks, "tasks/task[owner = '"+current_user+"']/@title");
+	    ListIterator<String> listTaskUser2 = listTaskUser.listIterator();
+	    int nbTaskUser = listTaskUser.size();
+	    statsXML += "<user name=\"" + current_user + "\">";
+	    statsXML += "<tasks number=\""+listTaskUser.size()+"\">";
+	    if (listTaskUser2.hasNext()) {
+		current_task = listTaskUser2.next();
+		List<String> listTaskDone = XMLToolkit.getXPathValues(tasks, "tasks/task[owner = '"+current_user+"' and @done='true']/@title");
+		
+		/*____________________________DONE_____________________________*/
+		
+		
+		ListIterator<String> listTaskDone2 = listTaskDone.listIterator();
+		statsXML += "<done number=\""+listTaskDone.size()+"\">";
+		while(listTaskDone2.hasNext()) {
+		    current_task_done = listTaskDone2.next();
+		    statsXML += "<task title=\""+current_task_done+"\">"+"</task>";
+		}
+		statsXML += "</done>";
+		
+		statsXML += "<todo number=\""+(listTaskUser.size() - listTaskDone.size())+"\">";
+		
+
+		/*_________________________Late_____________________________*/
+		
+		
+		List<String> listTaskLate = XMLToolkit.getXPathValues(tasks, "tasks/task[owner = '"+current_user+"' and @done='false' and "+xPathDate+"<='" + nowDate +"']/@title");
+		ListIterator<String> listTaskLate2 = listTaskLate.listIterator();
+		statsXML += "<late number=\""+listTaskLate.size()+"\">";
+		while(listTaskLate2.hasNext()) {
+		    current_task_late = listTaskLate2.next();
+		    statsXML += "<task title=\""+current_task_late+"\"></task>";
+		}
+		statsXML += "</late>";
+		
+		/*_________________________Intime_____________________________*/
+		
+		List<String> listTaskIntime = XMLToolkit.getXPathValues(tasks, "tasks/task[owner = '"+current_user+"' and @done='false' and "+xPathDate+">'" + nowDate +"']/@title");
+		ListIterator<String> listTaskIntime2 = listTaskIntime.listIterator();
+		statsXML += "<intime number=\""+listTaskIntime.size()+"\">";
+		while(listTaskIntime2.hasNext()) {
+		    current_task_intime = listTaskIntime2.next();
+		    statsXML += "<task title=\""+current_task_intime+"\"></task>";
+		}
+		statsXML += "</intime>";
+		statsXML += "</todo>";
+		
+	    }
+	    else {
+		statsXML += "<done number=\"0\"></done>";
+		statsXML += "<todo number=\"0\"><late number=\"0\"></late><intime number=\"0\"></intime></todo>";
+	    }
+	    statsXML += "</tasks>";
+	    statsXML += "</user>";
+	}
+
+		
+	statsXML += "</stats>";
 	LOGGER.log(Level.INFO, "Stats built: " + statsXML);
 	return statsXML;
     }
-
+    
     /**
 	 * Permet d'initialiser la base de données à partir de données sous la forme d'un fichier XML
 	 * 

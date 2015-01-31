@@ -15,28 +15,28 @@
 		<welcome-file>DefaultServlet</welcome-file>
 	</welcome-file-list>
 	<servlet>
-		<description></description>
-		<display-name>DefaultServlet</display-name>
-		<servlet-name>DefaultServlet</servlet-name>
-		<servlet-class>fr.enseirb.webxml.servlet.DefaultServlet</servlet-class>
+	  <description></description>
+	  <display-name>DefaultServlet</display-name>
+	  <servlet-name>DefaultServlet</servlet-name>
+	  <servlet-class>fr.enseirb.webxml.servlet.DefaultServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>DefaultServlet</servlet-name>
-		<url-pattern>/DefaultServlet</url-pattern>
-		<url-pattern>/</url-pattern>
+	  <servlet-name>DefaultServlet</servlet-name>
+	  <url-pattern>/DefaultServlet</url-pattern>
+	  <url-pattern>/</url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<description></description>
-		<display-name>RawFileServlet</display-name>
-		<servlet-name>RawFileServlet</servlet-name>
-		<servlet-class>fr.enseirb.webxml.servlet.RawFileServlet</servlet-class>
+	  <description></description>
+	  <display-name>RawFileServlet</display-name>
+	  <servlet-name>RawFileServlet</servlet-name>
+	  <servlet-class>fr.enseirb.webxml.servlet.RawFileServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>RawFileServlet</servlet-name>
-		<url-pattern>*.js</url-pattern>
-		<url-pattern>*.css</url-pattern>
-		<url-pattern>*.png</url-pattern>
-		<url-pattern>*.jpg</url-pattern>
+	  <servlet-name>RawFileServlet</servlet-name>
+	  <url-pattern>*.js</url-pattern>
+	  <url-pattern>*.css</url-pattern>
+	  <url-pattern>*.png</url-pattern>
+	  <url-pattern>*.jpg</url-pattern>
 	</servlet-mapping>
 	<servlet>
 	  <description></description>
@@ -50,14 +50,50 @@
 	</servlet-mapping>
 	<servlet>
 	  <description></description>
+	  <display-name>ListTasksServlet</display-name>
+	  <servlet-name>ListTasksServlet</servlet-name>
+	  <servlet-class>fr.enseirb.webxml.servlet.ListTasksServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListTasksServlet</servlet-name>
+		<url-pattern>/task/list/xml</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <description></description>
+	  <display-name>StatsServlet</display-name>
+	  <servlet-name>StatsServlet</servlet-name>
+	  <servlet-class>fr.enseirb.webxml.servlet.StatsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>StatsServlet</servlet-name>
+	  <url-pattern>/stats/xml</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+	  <description></description>
 	  <display-name>ListUsersServlet</display-name>
 	  <servlet-name>ListUsersServlet</servlet-name>
 	  <servlet-class>fr.enseirb.webxml.servlet.ListUsersServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>ListUsersServlet</servlet-name>
-		<url-pattern>/users/list/xml</url-pattern>
+	  <servlet-name>ListUsersServlet</servlet-name>
+	  <url-pattern>/user/list/xml</url-pattern>
 	</servlet-mapping>
+
+
+	<servlet>
+	  <description></description>
+	  <display-name>ListUsersServlet2</display-name>
+	  <servlet-name>ListUsersServlet2</servlet-name>
+	  <servlet-class>fr.enseirb.webxml.servlet.ListUsersServlet2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ListUsersServlet2</servlet-name>
+	  <url-pattern>/user/list</url-pattern>
+	</servlet-mapping>
+
+
 	<servlet>
 	  <description></description>
 	  <display-name>CreateUserServlet</display-name>
@@ -68,6 +104,42 @@
 		<servlet-name>CreateUserServlet</servlet-name>
 		<url-pattern>/user/create/url</url-pattern>
 	</servlet-mapping>
+
+
+	<servlet>
+	  <description></description>
+	  <display-name>CreateUserServlet2</display-name>
+	  <servlet-name>CreateUserServlet2</servlet-name>
+	  <servlet-class>fr.enseirb.webxml.servlet.CreateUserServlet2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateUserServlet2</servlet-name>
+		<url-pattern>/user/create</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	  <description></description>
+	  <display-name>CreateTaskServlet</display-name>
+	  <servlet-name>CreateTaskServlet</servlet-name>
+	  <servlet-class>fr.enseirb.webxml.servlet.CreateTaskServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateTaskServlet</servlet-name>
+		<url-pattern>/task/create/url</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	  <description></description>
+	  <display-name>CreateTaskServlet2</display-name>
+	  <servlet-name>CreateTaskServlet2</servlet-name>
+	  <servlet-class>fr.enseirb.webxml.servlet.CreateTaskServlet2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateTaskServlet2</servlet-name>
+		<url-pattern>/task/create</url-pattern>
+	</servlet-mapping>
+	
+
 	<servlet>
 		<description></description>
 		<display-name>ReinitDataServlet</display-name>

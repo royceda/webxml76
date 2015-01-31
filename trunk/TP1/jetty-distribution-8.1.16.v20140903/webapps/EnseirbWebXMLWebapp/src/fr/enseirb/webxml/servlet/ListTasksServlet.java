@@ -30,19 +30,22 @@ public class ListTasksServlet extends HttpServlet {
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	java.util.Properties params = ServletToolkit.parseURLParams(request);
-	String sResponse = null;
-	String action = params.getProperty("action");
+	String sResponse = "";
+	String id = params.getProperty("id");
 
 	   
-	//About student
-	if(request.getRequestURI().contains("task/list/xml")){
-	    if(request.getRequestURI().contains("?id=")){
-		response.setHeader("Content-Type", "application/xml");
-		sResponse = XMLMediator.getTask(1); 
-	    }
+
+
+	if(params.containsKey("id")){
+	    int i = Integer.parseInt(id);
+	    response.setHeader("Content-Type", "application/xml");
+	    sResponse = XMLMediator.getTask(i); 
+	}
+	else {
 	    response.setHeader("Content-Type", "application/xml");
 	    sResponse = XMLMediator.getTasks(); 
 	}
+	
 	ServletToolkit.writeResponse(response, sResponse);
     }
     
